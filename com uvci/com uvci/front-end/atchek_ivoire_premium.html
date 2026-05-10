@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attiék Ivoire — Prototype UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atchek_ivoire_premium.css">
+<script src="atchek_ivoire_premium.js">
+     
+</script>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="showPage('accueil')">
+    <div class="logo-icon">🌿</div>
+    Attiék Ivoire
+  </div>
+  <ul class="nav-links">
+    <li><button onclick="showPage('accueil')" id="nav-accueil" class="active-nav">Accueil</button></li>
+    <li><button onclick="showPage('catalogue')" id="nav-catalogue">Catalogue</button></li>
+    <li><button onclick="showPage('catalogue')" id="nav-commandes">Commandes</button></li>
+    <li><a href="#">À propos</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-compte" onclick="alert('Page connexion — à implémenter')">Mon compte</button>
+    <button class="btn-cart" onclick="alert('Panier — à implémenter')">
+      🛒 Panier
+      <span class="cart-badge" id="cart-count">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ PAGE ACCUEIL ═══ -->
+<div class="page active" id="page-accueil">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-texture"></div>
+     
+    <div class="hero-left">
+      <div class="hero-badge">Livraison partout à Abidjan</div>
+      <h1 class="hero-title">
+        L'attiéké ivoirien<br>
+        <em>livré chez vous,</em><br>
+        frais & authentique
+      </h1>
+      <p class="hero-subtitle">
+        De la fermentation artisanale à votre assiette — découvrez notre sélection d'attiéké de qualité, commandé en ligne en quelques clics.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showPage('catalogue')">Commander maintenant →</button>
+        <button class="btn-secondary" onclick="showPage('catalogue')">Voir le catalogue</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Clients satisfaits</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3h</span>
+          <span class="stat-label">Livraison rapide</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Artisanal & naturel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hero-card-img">🍚</div>
+          <div class="hero-card-body">
+            <span class="hero-card-tag">✨ Best-seller</span>
+            <div class="hero-card-name">Attiéké Garba Premium</div>
+            <div class="hero-card-desc">Finement granulé, parfait avec thon grillé et sauce tomate pimentée.</div>
+            <div class="hero-card-footer">
+              <div class="hero-card-price">1 500 <span>FCFA / kg</span></div>
+              <button class="btn-add-mini" onclick="addToCart()">+ Panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge fb-livraison">
+          <div class="fb-icon">🚚</div>
+          <div class="fb-text">
+            <strong>Livraison à domicile</strong>
+            <span>Abidjan & banlieue</span>
+          </div>
+        </div>
+        <div class="floating-badge fb-note">
+          <div class="fb-stars">★★★★★</div>
+          <div class="fb-note-text">4.9 / 5 · 120 avis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="avantages">
+    <div class="section-header">
+      <div class="section-eyebrow">Pourquoi Attiék Ivoire ?</div>
+      <h2 class="section-title">Un service pensé pour vous</h2>
+    </div>
+    <div class="avantages-grid">
+      <div class="avantage-card">
+        <div class="avantage-icon">🌿</div>
+        <div class="avantage-title">100 % Artisanal</div>
+        <div class="avantage-desc">Produit selon les recettes traditionnelles ivoiriennes, sans conservateurs ni additifs.</div>
+      </div>
+      <div class="avantage-card">
+        <div class="avantage-icon">🚚</div>
+        <div class="avantage-title">Livraison rapide</div>
+        <div class="avantage-desc">Livraison à domicile en moins de 3h à Abidjan. Suivi en temps réel de votre commande.</div>
+      </div>
+      <div class="avantage-card">
+        <div class="avantage-icon">💳</div>
+        <div class="avantage-title">Paiement Mobile Money</div>
+        <div class="avantage-desc">Orange Money, Wave, MTN Money — ou à la livraison. Transactions 100 % sécurisées.</div>
+      </div>
+      <div class="avantage-card">
+        <div class="avantage-icon">⭐</div>
+        <div class="avantage-title">Qualité garantie</div>
+        <div class="avantage-desc">Contrôle qualité à chaque étape. Satisfait ou remboursé sur votre première commande.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo logo" style="color:white; margin-bottom:16px;">
+          <div class="logo-icon">🌿</div> Attiék Ivoire
+        </div>
+        <p>La plateforme de référence pour commander votre attiéké artisanal ivoirien — livré frais, directement chez vous.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="#">Attiéké nature</a></li>
+          <li><a href="#">Attiéké garba</a></li>
+          <li><a href="#">Attiéké fumé</a></li>
+          <li><a href="#">Promotions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service client</h4>
+        <ul>
+          <li><a href="#">Comment commander</a></li>
+          <li><a href="#">Livraison & retrait</a></li>
+          <li><a href="#">Politique de retour</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">WhatsApp : +225 07 XX XX XX</a></li>
+          <li><a href="#">contact@attiekivoire.ci</a></li>
+          <li><a href="#">Abidjan, Côte d'Ivoire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Attiék Ivoire · LOGIC & LIGHT · Licence 1</span>
+      <div class="footer-payment">
+        <span>Paiement accepté :</span>
+        <span class="pay-badge">Orange Money</span>
+        <span class="pay-badge">Wave</span>
+        <span class="pay-badge">MTN</span>
+        <span class="pay-badge">Livraison</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ PAGE CATALOGUE ═══ -->
+<div class="page" id="page-catalogue">
+
+  <div class="catalogue-header">
+    <div class="catalogue-header-inner">
+      <div class="catalogue-breadcrumb">
+        <span onclick="showPage('accueil')" style="cursor:pointer;color:rgba(255,255,255,0.7)">Accueil</span>
+        <span>›</span>
+        <span style="color:white;font-weight:600;">Catalogue</span>
+      </div>
+      <h1>Notre catalogue</h1>
+      <p>Découvrez toute notre gamme d'attiéké artisanal, préparé chaque matin avec soin.</p>
+    </div>
+  </div>
+
+  <div class="catalogue-body">
+
+    <!-- FILTRES -->
+    <aside class="filtres">
+      <h3>Filtres <button class="clear-filtres" onclick="clearFiltres()">Tout effacer</button></h3>
+
+      <div class="filtre-section">
+        <div class="filtre-label">Catégorie</div>
+        <div class="filtre-chips">
+          <button class="chip active" onclick="filterBy('all',this)">Tous</button>
+          <button class="chip" onclick="filterBy('nature',this)">Nature</button>
+          <button class="chip" onclick="filterBy('garba',this)">Garba</button>
+          <button class="chip" onclick="filterBy('fume',this)">Fumé</button>
+          <button class="chip" onclick="filterBy('piment',this)">Pimenté</button>
+        </div>
+      </div>
+
+      <div class="filtre-section">
+        <div class="filtre-label">Format</div>
+        <div class="filtre-chips">
+          <button class="chip" onclick="toggleChip(this)">500g</button>
+          <button class="chip" onclick="toggleChip(this)">1 kg</button>
+          <button class="chip" onclick="toggleChip(this)">2 kg</button>
+          <button class="chip" onclick="toggleChip(this)">5 kg</button>
+        </div>
+      </div>
+
+      <div class="filtre-section">
+        <div class="filtre-label">Budget max (FCFA)</div>
+        <div class="filtre-range">
+          <input type="range" min="500" max="10000" value="6000" oninput="updatePrice(this)">
+          <div class="price-labels">
+            <span>500 F</span>
+            <span id="price-val">6 000 F</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filtre-section">
+        <div class="filtre-label">Disponibilité</div>
+        <div class="filtre-chips">
+          <button class="chip active" onclick="toggleChip(this)">En stock</button>
+          <button class="chip" onclick="toggleChip(this)">Précommande</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- GRILLE -->
+    <main class="produits-zone">
+
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" placeholder="Rechercher un produit…" id="search-input" oninput="filterSearch(this.value)">
+      </div>
+
+      <div class="produits-toolbar">
+        <div class="produits-count"><strong id="produit-count">8</strong> produits trouvés</div>
+        <div class="toolbar-right">
+          <select class="sort-select" onchange="sortProducts(this.value)">
+            <option value="pop">Popularité</option>
+            <option value="prix-asc">Prix croissant</option>
+            <option value="prix-desc">Prix décroissant</option>
+            <option value="nom">Nom A–Z</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active" title="Grille">⊞</button>
+            <button class="view-btn" title="Liste">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produits-grid" id="produits-grid">
+        <!-- Produits injectés par JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- FOOTER (catalogue) -->
+  <footer style="margin-top:0;">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 Attiék Ivoire · LOGIC & LIGHT</span>
+      <div class="footer-payment">
+        <span class="pay-badge">Orange Money</span>
+        <span class="pay-badge">Wave</span>
+        <span class="pay-badge">MTN</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ MODAL PRODUIT ═══ -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-inner">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-img" id="modal-img" style="--color-a:#C4622D;--color-b:#D4A96A;">
+      <div class="produit-img-bg"></div>
+      <span style="position:relative;z-index:1;font-size:7rem;" id="modal-emoji">🍚</span>
+    </div>
+    <div class="modal-body">
+      <span class="modal-tag" id="modal-tag">Catégorie</span>
+      <h2 class="modal-title" id="modal-title">Nom du produit</h2>
+      <p class="modal-desc" id="modal-desc">Description du produit.</p>
+      <div class="modal-prix" id="modal-prix">1 500 <small>FCFA / kg</small></div>
+
+      <div class="modal-infos">
+        <div class="info-chip">📦 <div><strong id="modal-format">1 kg</strong>Format disponible</div></div>
+        <div class="info-chip">🚚 <div><strong>2–3h</strong>Délai de livraison</div></div>
+        <div class="info-chip">⭐ <div><strong id="modal-note">4.8/5</strong>Note clients</div></div>
+        <div class="info-chip">🌿 <div><strong>100%</strong>Naturel & frais</div></div>
+      </div>
+
+      <div class="qty-control">
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <span class="qty-num" id="qty-display">1</span>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+
+      <button class="btn-add-cart" onclick="addToCartModal()">🛒 Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✅</span>
+  <span id="toast-msg">Produit ajouté au panier !</span>
+</div>
+
+
+</body>
+</html>
